@@ -31,12 +31,12 @@
 ```powershell
 git add .
 git commit -m "Prepare SHUNet Windows 0.14.3 and Android 0.4.0 release"
-gh auth login --hostname github.com --git-protocol https --web --scopes workflow
+gh auth login --hostname github.com --git-protocol https --web
 ```
 
 Git 负责提交、标签和推送；GitHub CLI 负责登录、创建 GitHub 仓库与 Release、上传下载附件。发布脚本只为当前仓库配置 GitHub CLI 凭据助手，不替换其他仓库的 Git 登录。不要将访问令牌写进脚本、提交记录、远程 URL 或聊天。
 
-本仓库包含 `.github/workflows/build.yml`。使用 GitHub CLI 的 OAuth 登录推送该文件需要额外的 `workflow` 授权，普通仓库权限不足；请由维护者明确同意后在 GitHub 页面确认。已经登录但缺少该权限时，可执行 `gh auth refresh --hostname github.com --scopes workflow` 补充授权。
+本仓库不包含活动的 GitHub Actions 工作流，不自动构建或发布。软件先在本机手动构建、验证，再通过命令行上传，当前发布流程无需额外的 `workflow` 授权。
 
 ## 3. 首次创建仓库并发布
 
@@ -52,6 +52,6 @@ Git 负责提交、标签和推送；GitHub CLI 负责登录、创建 GitHub 仓
 
 主分支持续保留两端最新源码，历史由 Git 提交和平台标签保存，不向源码目录重复复制旧版本。Windows 修改 `campus-tray/Cargo.toml` 并更新锁文件中的自身包版本；Android 修改 `app/build.gradle` 的 `versionName` 与递增的 `versionCode`。
 
-正式 Android 发布需由维护者创建并长期保管发行签名密钥。当前调试签名包不应改名冒充正式版本，签名私钥不得提交仓库。自动构建生成的调试包可能使用不同调试密钥，不能保证覆盖现有安装。
+正式 Android 发布需由维护者创建并长期保管发行签名密钥。当前调试签名包不应改名冒充正式版本，签名私钥不得提交仓库。不同环境生成的调试包可能使用不同调试密钥，不能保证覆盖现有安装。
 
 发布后核对仓库首页、main 源码、两个标签、Latest 指向、附件数量与 SHA-256；下载到设备再进行校园网络实机验证。

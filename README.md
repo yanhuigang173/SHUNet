@@ -78,10 +78,10 @@ campus-tray/       Windows 原生托盘源码、资源与 Cargo.lock
 shunet-android/    Android 原生源码、Gradle Wrapper 与构建脚本
 docs/             使用、历史更新和发布说明
 scripts/          Windows 构建、发布打包、GitHub 发布脚本
-.github/          持续构建、问题模板与 PR 模板
+.github/          问题模板与 PR 模板
 ```
 
-开发与验证见 [CONTRIBUTING.md](CONTRIBUTING.md)，发布流程见 [docs/RELEASING.md](docs/RELEASING.md)。GitHub Actions 会分别检查 Windows 测试 / 构建及 Android 调试构建 / Lint；构建通过不能替代校园 Wi-Fi 下的实机认证验证。
+开发与验证见 [CONTRIBUTING.md](CONTRIBUTING.md)，发布流程见 [docs/RELEASING.md](docs/RELEASING.md)。本仓库不启用自动构建：在本机手动构建、验证后，将安装包上传到 Releases。构建通过不能替代校园 Wi-Fi 下的实机认证验证。
 
 ## 许可
 
