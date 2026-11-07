@@ -9,9 +9,15 @@ if (-not $ArtifactsDirectory) { $ArtifactsDirectory = Join-Path $rootDirectory '
 Push-Location -LiteralPath $rootDirectory
 try {
     & $GitHubCli auth status --hostname github.com
-    if ($LASTEXITCODE -ne 0) { throw 'Run gh auth login --hostname github.com --git-protocol https --web first.' }
+    if ($LASTEXITCODE -ne 0) { throw 'Run gh auth login --hostname github.com --git-protocol https --web --scopes workflow first.' }
     $login = & $GitHubCli api user --jq .login
     if ($LASTEXITCODE -ne 0 -or $login.Trim() -ne $Repository.Split('/')[0]) { throw 'Authenticated GitHub account must match the target owner.' }
+    $userResponse = & $GitHubCli api -i user
+    if ($LASTEXITCODE -ne 0) { throw 'Cannot verify GitHub permissions.' }
+    $oauthScopes = $userResponse | Select-String -Pattern '^X-Oauth-Scopes:'
+    if ($oauthScopes -and $oauthScopes.Line -notmatch '\bworkflow\b') {
+        throw 'Publishing .github/workflows requires explicit workflow authorization. Run gh auth refresh --hostname github.com --scopes workflow after approving that permission.'
+    }
     $windowsVersion = [regex]::Match((Get-Content -LiteralPath 'campus-tray\Cargo.toml' -Raw), '(?m)^version\s*=\s*"([^"]+)"').Groups[1].Value
     $androidVersion = [regex]::Match((Get-Content -LiteralPath 'shunet-android\app\build.gradle' -Raw), "versionName\s+'([^']+)'").Groups[1].Value
     if ((& git status --porcelain)) { throw 'Commit reviewed source files before publishing.' }

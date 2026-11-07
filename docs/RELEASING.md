@@ -31,10 +31,12 @@
 ```powershell
 git add .
 git commit -m "Prepare SHUNet Windows 0.14.3 and Android 0.4.0 release"
-gh auth login --hostname github.com --git-protocol https --web
+gh auth login --hostname github.com --git-protocol https --web --scopes workflow
 ```
 
 Git 负责提交、标签和推送；GitHub CLI 负责登录、创建 GitHub 仓库与 Release、上传下载附件。发布脚本只为当前仓库配置 GitHub CLI 凭据助手，不替换其他仓库的 Git 登录。不要将访问令牌写进脚本、提交记录、远程 URL 或聊天。
+
+本仓库包含 `.github/workflows/build.yml`。使用 GitHub CLI 的 OAuth 登录推送该文件需要额外的 `workflow` 授权，普通仓库权限不足；请由维护者明确同意后在 GitHub 页面确认。已经登录但缺少该权限时，可执行 `gh auth refresh --hostname github.com --scopes workflow` 补充授权。
 
 ## 3. 首次创建仓库并发布
 
