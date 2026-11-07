@@ -15,15 +15,25 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Install MinGW-w64
+        id: msys2
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: mingw-w64-x86_64-gcc
       - name: Configure Rust GNU and MinGW
         shell: pwsh
+        env:
+          MSYS2_LOCATION: ${{ steps.msys2.outputs.msys2-location }}
         run: |
           rustup toolchain install stable-x86_64-pc-windows-gnu --profile minimal
           rustup default stable-x86_64-pc-windows-gnu
-          if (-not (Test-Path 'C:\msys64\mingw64\bin\windres.exe')) {
-            throw 'Expected MinGW-w64 is missing from the Windows runner.'
+          $mingwBin = Join-Path $env:MSYS2_LOCATION 'mingw64\bin'
+          if (-not (Test-Path (Join-Path $mingwBin 'windres.exe'))) {
+            throw 'MinGW-w64 installation did not provide windres.'
           }
-          'C:\msys64\mingw64\bin' | Out-File -FilePath $env:GITHUB_PATH -Append -Encoding utf8
+          $mingwBin | Out-File -FilePath $env:GITHUB_PATH -Append -Encoding utf8
       - name: Run default tests and build portable executable
         shell: pwsh
         run: ./scripts/build-windows.ps1
@@ -41,8 +51,11 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: Install Android platform and build tools
-        run: sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
+      - name: Install Android SDK and build tools
+        uses: android-actions/setup-android@v4
+        with:
+          cmdline-tools-version: '12266719'
+          packages: 'platform-tools platforms;android-36 build-tools;35.0.0'
       - name: Build debug APK and run Android Lint
         working-directory: shunet-android
         run: sh ./gradlew --no-daemon --console plain :app:assembleDebug :app:lintDebug
