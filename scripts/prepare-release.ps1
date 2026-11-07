@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$WindowsExe,
     [Parameter(Mandatory = $true)][string]$AndroidApk,
     [string]$OutputDirectory

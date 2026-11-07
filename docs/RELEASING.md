@@ -32,10 +32,9 @@
 git add .
 git commit -m "Prepare SHUNet Windows 0.14.3 and Android 0.4.0 release"
 gh auth login --hostname github.com --git-protocol https --web
-gh auth setup-git
 ```
 
-Git 负责提交、标签和推送；GitHub CLI 只负责创建 GitHub 仓库与 Release、上传下载附件。不要将访问令牌写进脚本、提交记录、远程 URL 或聊天。
+Git 负责提交、标签和推送；GitHub CLI 负责登录、创建 GitHub 仓库与 Release、上传下载附件。发布脚本只为当前仓库配置 GitHub CLI 凭据助手，不替换其他仓库的 Git 登录。不要将访问令牌写进脚本、提交记录、远程 URL 或聊天。
 
 ## 3. 首次创建仓库并发布
 

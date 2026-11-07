@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$TargetDirectory = (Join-Path $env:TEMP 'shunet-build-target'),
     [switch]$SkipTests,
     [switch]$Offline

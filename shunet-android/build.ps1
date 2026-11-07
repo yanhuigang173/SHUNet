@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$JavaHome,
     [string]$SdkPath,
     [string]$GradleExecutable,
