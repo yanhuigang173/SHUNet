@@ -1,0 +1,18 @@
+#include <windows.h>
+
+// ASCII resource source; Chinese text is assigned with the Unicode API at runtime.
+101 DIALOGEX 0, 0, 260, 166
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Website"
+FONT 9, "Segoe UI"
+BEGIN
+    LTEXT "", 1600, 0, 0, 100, 20
+    LTEXT "", 1601, 0, 0, 100, 20
+    LTEXT "Name", 1003, 12, 15, 34, 14
+    EDITTEXT 1001, 48, 12, 300, 22, ES_AUTOHSCROLL | WS_TABSTOP
+    LTEXT "URL", 1004, 12, 49, 34, 14
+    EDITTEXT 1002, 48, 46, 300, 22, ES_AUTOHSCROLL | WS_TABSTOP
+    LTEXT "", 1005, 12, 77, 336, 22
+    DEFPUSHBUTTON "Save", IDOK, 203, 109, 68, 23
+    PUSHBUTTON "Cancel", IDCANCEL, 280, 109, 68, 23
+END

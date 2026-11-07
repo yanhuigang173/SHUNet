@@ -1,0 +1,11 @@
+Gradle Wrapper 8.13
+Copyright Gradle, Inc. and contributors.
+Licensed under the Apache License, Version 2.0; see LICENSE in this directory.
+
+Official source:
+https://raw.githubusercontent.com/gradle/gradle/v8.13.0/gradle/wrapper/gradle-wrapper.jar
+
+Wrapper JAR SHA-256 (verified against the Gradle distribution service):
+81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f
+
+Gradle distribution SHA-256 is pinned in gradle-wrapper.properties.

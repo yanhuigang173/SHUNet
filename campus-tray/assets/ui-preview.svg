@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="1440" viewBox="0 0 1584 1440">
+<defs>
+  <style>
+    text {font-family:'Microsoft YaHei UI','Segoe UI',sans-serif;fill:#192b44;font-size:13px}
+    .small {font-size:12px;fill:#60718a} .heading {font-size:22px;font-weight:600}
+    .metric {font-family:'Segoe UI',sans-serif;font-size:32px;font-weight:600}
+    .blue {fill:#2563eb} .teal {fill:#098e7b} .white {fill:white} .strong {font-weight:600}
+    .panel {fill:white;stroke:#dfe6f0} .line {stroke:#dfe6f0} .center {text-anchor:middle}
+  </style>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#192b44" flood-opacity=".08"/></filter>
+  <symbol id="logo" viewBox="0 0 144 144"><g transform="translate(20 0)" fill="#0098ff">
+    <path d="M12 23 Q50 -7 88 23" fill="none" stroke="#0098ff" stroke-width="12" stroke-linecap="round"/>
+    <path d="M27 38 Q50 20 73 38" fill="none" stroke="#0098ff" stroke-width="11" stroke-linecap="round"/>
+    <path d="M41 50 Q50 43 59 50 Q62 52 59 55 L53 61 Q50 64 47 61 L41 55 Q38 52 41 50 Z M4 53 L18 60 Q23 62 23 68 L23 101 C23 116 32 125 50 125 C68 125 77 116 77 101 L77 68 Q77 62 84 58 L96 52 L96 101 C96 125 80 140 50 140 C20 140 4 125 4 101 Z M30 65 C36 68 40 70 40 78 L40 98 C36 93 31 96 31 100 Z M33 102 C35 96 39 100 40 105 C42 111 47 108 47 102 C47 91 45 84 51 75 C56 66 65 61 76 59 C72 65 71 70 73 75 C65 78 66 87 64 97 C62 116 42 122 33 107 Z"/>
+  </g></symbol>
+  <g id="brand"><rect x="24" y="20" width="44" height="44" rx="12" fill="#eaf1ff"/><use href="#logo" x="32" y="28" width="28" height="28"/></g>
+  <g id="chrome"><path d="M0 32V12Q0 0 12 0H708Q720 0 720 12V32Z" fill="white"/><use href="#logo" x="12" y="8" width="16" height="16"/><text x="38" y="21" class="small">SHUNet</text><text x="650" y="21" class="small">—</text><text x="689" y="22" font-size="18">×</text></g>
+</defs>
+<rect width="1584" height="1440" fill="#eaf0f7"/>
+<text x="48" y="62" font-size="30" font-weight="600">SHUNet / 子窗口设计</text>
+<text x="48" y="92" fill="#60718a">轻量原生 · 清晰层次 · 统一交互　/　v0.7.0 布局设计稿，数值仅作展示</text>
+
+<!-- Network measurement: same 720 x 520 DIP content geometry as the app. -->
+<g transform="translate(48 144)">
+  <rect width="720" height="552" rx="12" fill="#f5f7fb" filter="url(#shadow)"/><use href="#chrome"/>
+  <g transform="translate(0 32)">
+    <rect width="720" height="116" fill="white"/><use href="#brand"/>
+    <text x="84" y="44" class="heading">网络测速</text><text x="84" y="68" class="small">了解当前连接的真实表现</text>
+    <rect x="472" y="22" width="108" height="32" rx="7" fill="#eaf1ff"/><text x="526" y="43" class="center blue strong">直连测速</text>
+    <rect x="588" y="22" width="108" height="32" rx="7" class="panel"/><text x="642" y="43" class="center strong">代理测速</text>
+    <rect x="556" y="58" width="140" height="26" rx="13" fill="#e8f7ef"/><text x="626" y="76" class="center" style="fill:#168b5d;font-size:12px">测速完成</text>
+    <text x="24" y="103" class="small">直连不使用 HTTP 代理；TUN / VPN / USB 共享仍由系统路由决定</text>
+    <rect x="24" y="128" width="216" height="110" rx="12" class="panel"/><rect x="252" y="128" width="216" height="110" rx="12" class="panel"/><rect x="480" y="128" width="216" height="110" rx="12" class="panel"/>
+    <text x="40" y="155" class="small strong">HTTP 延迟</text><text x="40" y="198" class="metric">139</text><text x="40" y="222" class="small">ms · HTTP 往返</text>
+    <text x="268" y="155" class="small strong">下载速度</text><text x="268" y="198" class="metric blue">75.5</text><text x="268" y="222" class="small">Mbps · 9.00 MiB/s</text>
+    <text x="496" y="155" class="small strong">上传速度</text><text x="496" y="198" class="metric teal">20.4</text><text x="496" y="222" class="small">Mbps · 2.43 MiB/s</text>
+    <text x="24" y="268">测速完成，可切换模式对比或查看详细结果</text><text x="696" y="268" class="blue" text-anchor="end">100%</text>
+    <rect x="24" y="280" width="672" height="6" rx="3" fill="#168b5d"/>
+    <text x="24" y="321" class="strong">最近对比</text><text x="696" y="321" class="small" text-anchor="end">↓ 下载 / ↑ 上传 · Mbps</text>
+    <rect x="24" y="336" width="672" height="72" rx="10" class="panel"/><path d="M40 372H680" class="line"/>
+    <text x="40" y="361">直连</text><text x="148" y="361">↓ 75.5</text><text x="298" y="361">↑ 20.4</text><text x="680" y="361" class="small" text-anchor="end">16:13:26 · 完成</text>
+    <text x="40" y="393">代理</text><text x="148" y="393">↓ —</text><text x="298" y="393">↑ —</text><text x="680" y="393" class="small" text-anchor="end">尚无记录</text>
+    <text x="24" y="436" class="small">已用 8.2 秒 · 下载 32.0 / 上传 8.0 MiB · HTTP 延迟不等于 Ping</text>
+    <rect y="446" width="720" height="74" fill="white"/><path d="M0 446H720" class="line"/>
+    <rect x="24" y="462" width="110" height="34" rx="7" class="panel"/><text x="79" y="484" class="center strong">详细结果</text>
+    <rect x="484" y="462" width="100" height="34" rx="7" class="panel"/><text x="534" y="484" class="center strong">复制结果</text>
+    <rect x="596" y="462" width="100" height="34" rx="7" fill="#2563eb"/><text x="646" y="484" class="center white strong">完成</text>
+  </g>
+</g>
+
+<!-- Shortcut editor -->
+<g transform="translate(816 144)">
+  <rect width="720" height="580" rx="12" fill="#f5f7fb" filter="url(#shadow)"/><use href="#chrome"/>
+  <g transform="translate(0 32)">
+    <rect width="720" height="84" fill="white"/><use href="#brand"/>
+    <text x="84" y="45" class="heading">全局快捷键</text><text x="84" y="69" class="small">为常用操作设置顺手的组合键</text>
+    <text x="24" y="105" class="small">选择功能，再点右侧输入框按下组合键。修改后点击保存。</text>
+    <rect x="24" y="128" width="417" height="342" rx="12" class="panel"/><rect x="449" y="128" width="247" height="342" rx="12" class="panel"/>
+    <rect x="32" y="136" width="401" height="32" fill="#eaf1ff"/><text x="44" y="157" class="blue">一键认证</text><text x="421" y="157" text-anchor="end" class="blue strong">Ctrl+Shift+U</text>
+    <text x="44" y="189">校园网下线</text><text x="421" y="189" text-anchor="end" class="small">未设置</text>
+    <text x="44" y="221">切换系统代理</text><text x="421" y="221" text-anchor="end" class="small">未设置</text>
+    <text x="44" y="253">切换自动重连</text><text x="421" y="253" text-anchor="end" class="small">未设置</text>
+    <text x="44" y="285">刷新附近 Wi-Fi</text><text x="421" y="285" text-anchor="end" class="small">未设置</text>
+    <text x="44" y="317">立即查询一次</text><text x="421" y="317" text-anchor="end" class="small">Ctrl+Shift+S</text>
+    <text x="44" y="349">打开认证网页</text><text x="421" y="349" text-anchor="end" class="small">未设置</text>
+    <text x="44" y="381">直连测速</text><text x="421" y="381" text-anchor="end" class="small">未设置</text>
+    <text x="44" y="413">代理测速</text><text x="421" y="413" text-anchor="end" class="small">未设置</text>
+    <rect x="426" y="240" width="4" height="126" rx="2" fill="#dfe6f0"/>
+    <text x="465" y="158" class="strong">一键认证：</text>
+    <rect x="465" y="190" width="215" height="48" rx="8" fill="white" stroke="#2563eb"/><text x="477" y="220">Ctrl+Shift+U</text>
+    <rect x="465" y="250" width="110" height="32" rx="7" class="panel"/><text x="520" y="271" class="center strong">清除当前</text>
+    <text x="465" y="316" class="small"><tspan x="465">支持 Ctrl / Alt / Shift / Win；</tspan><tspan x="465" dy="22">Backspace 清除。</tspan><tspan x="465" dy="22">非功能键需搭配 Ctrl、Alt 或 Win。</tspan><tspan x="465" dy="22">F12 由系统保留。</tspan></text>
+    <rect y="474" width="720" height="74" fill="white"/><path d="M0 474H720" class="line"/>
+    <rect x="24" y="490" width="110" height="34" rx="7" class="panel"/><text x="79" y="512" class="center strong">恢复默认</text>
+    <rect x="484" y="490" width="100" height="34" rx="7" class="panel"/><text x="534" y="512" class="center strong">取消</text>
+    <rect x="596" y="490" width="100" height="34" rx="7" fill="#2563eb"/><text x="646" y="512" class="center white strong">保存</text>
+  </g>
+</g>
+
+<!-- Bookmark editor -->
+<g transform="translate(48 784)">
+  <rect width="520" height="364" rx="12" fill="#f5f7fb" filter="url(#shadow)"/>
+  <path d="M0 32V12Q0 0 12 0H508Q520 0 520 12V32Z" fill="white"/><use href="#logo" x="12" y="8" width="16" height="16"/><text x="38" y="21" class="small">SHUNet</text><text x="489" y="22" font-size="18">×</text>
+  <g transform="translate(0 32)">
+    <rect width="520" height="84" fill="white"/><use href="#brand"/><text x="84" y="45" class="heading">新增网址</text><text x="84" y="69" class="small">收藏与管理常用的 SHU 校园服务</text>
+    <text x="24" y="106">名称</text><rect x="24" y="112" width="472" height="36" rx="8" fill="white" stroke="#2563eb"/><text x="36" y="135">上海大学官网</text>
+    <text x="24" y="176">网址</text><rect x="24" y="182" width="472" height="36" rx="8" class="panel"/><text x="36" y="205">https://www.shu.edu.cn/</text>
+    <text x="24" y="246" class="small">仅支持网页地址；省略协议时自动使用 https://。</text>
+    <rect y="258" width="520" height="74" fill="white"/><path d="M0 258H520" class="line"/>
+    <rect x="284" y="274" width="100" height="34" rx="7" class="panel"/><text x="334" y="296" class="center strong">取消</text>
+    <rect x="396" y="274" width="100" height="34" rx="7" fill="#2563eb"/><text x="446" y="296" class="center white strong">保存</text>
+  </g>
+</g>
+
+<!-- Reader shared by help and full speed reports -->
+<g transform="translate(816 784)">
+  <rect width="720" height="580" rx="12" fill="#f5f7fb" filter="url(#shadow)"/><use href="#chrome"/>
+  <g transform="translate(0 32)">
+    <rect width="720" height="84" fill="white"/><use href="#brand"/><text x="84" y="45" class="heading">使用说明</text><text x="84" y="69" class="small">SHUNet · 轻量、安静的校园网络助手</text>
+    <rect x="24" y="92" width="672" height="372" rx="12" class="panel"/>
+    <text x="38" y="124" class="strong">SHUNet · 校园网工具 v0.7.0</text>
+    <text x="38" y="160"><tspan x="38">【首次使用】</tspan><tspan x="38" dy="26">点击托盘图标打开菜单，在设置中保存校园网账号与密码。</tspan><tspan x="38" dy="26">已经认证时先确认在线状态，避免重复提交登录。</tspan></text>
+    <text x="38" y="264"><tspan x="38">【一键测速】</tspan><tspan x="38" dy="26">选择直连或代理测速，查看延迟、上下行速度及最近对比。</tspan><tspan x="38" dy="26">关闭测速窗口后可在后台继续；结束后可查看详细结果。</tspan><tspan x="38" dy="26">测速与校园网认证状态相互独立。</tspan></text>
+    <text x="38" y="394" class="small"><tspan x="38">帮助与测速详细结果使用同一阅读窗口。</tspan><tspan x="38" dy="24">长内容可滚动、选择，也可复制全文。</tspan></text>
+    <rect x="678" y="106" width="4" height="100" rx="2" fill="#dfe6f0"/>
+    <rect y="474" width="720" height="74" fill="white"/><path d="M0 474H720" class="line"/>
+    <rect x="24" y="490" width="120" height="34" rx="7" class="panel"/><text x="84" y="512" class="center strong">复制全文</text>
+    <rect x="596" y="490" width="100" height="34" rx="7" fill="#2563eb"/><text x="646" y="512" class="center white strong">关闭</text>
+  </g>
+</g>
+<text x="48" y="1220" class="strong">统一样式</text><circle cx="56" cy="1252" r="8" fill="#2563eb"/><text x="76" y="1257" class="small">主要操作</text><circle cx="196" cy="1252" r="8" fill="#168b5d"/><text x="216" y="1257" class="small">完成</text><circle cx="304" cy="1252" r="8" fill="#a66b0d"/><text x="324" y="1257" class="small">未全部完成</text>
+<text x="48" y="1300" class="small">24 DIP 页面边距 · 12 DIP 卡片间距</text><text x="48" y="1326" class="small">原生标题栏与输入控件 · 浅色主题</text><text x="48" y="1352" class="small">按 DPI 缩放，紧凑模式优先保留数值与操作</text>
+</svg>

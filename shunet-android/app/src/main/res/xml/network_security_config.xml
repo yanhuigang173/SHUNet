@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">10.10.9.9</domain>
+        <!-- Some SHU gateway bootstrap redirects use this address. GET only. -->
+        <domain includeSubdomains="false">123.123.123.123</domain>
+    </domain-config>
+</network-security-config>

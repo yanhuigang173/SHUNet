@@ -1,0 +1,40 @@
+#include <windows.h>
+#include <commctrl.h>
+
+104 DIALOGEX 0, 0, 360, 260
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_CLIPCHILDREN
+CAPTION "SHUNet"
+FONT 9, "Segoe UI"
+BEGIN
+    LTEXT "", 1600, 0, 0, 100, 20
+    LTEXT "", 1601, 0, 0, 100, 20
+    CTEXT "", 1401, 0, 0, 100, 20
+    LTEXT "", 1402, 0, 0, 100, 20, SS_ENDELLIPSIS
+    LTEXT "", 1404, 0, 0, 100, 20, SS_ENDELLIPSIS
+    LTEXT "", 1405, 0, 0, 100, 20
+    LTEXT "", 1406, 0, 0, 100, 20
+    LTEXT "", 1407, 0, 0, 100, 20
+    LTEXT "", 1408, 0, 0, 100, 20, SS_ENDELLIPSIS
+    LTEXT "", 1415, 0, 0, 100, 20
+    LTEXT "", 1416, 0, 0, 100, 20
+    LTEXT "", 1417, 0, 0, 100, 20
+    LTEXT "", 1420, 0, 0, 100, 20
+    LTEXT "", 1421, 0, 0, 100, 20
+    LTEXT "", 1422, 0, 0, 100, 20
+    RTEXT "", 1426, 0, 0, 100, 20
+    LTEXT "", 1427, 0, 0, 100, 20
+    RTEXT "", 1428, 0, 0, 100, 20
+    LTEXT "", 1430, 0, 0, 100, 20
+    LTEXT "", 1431, 0, 0, 100, 20
+    LTEXT "", 1432, 0, 0, 100, 20
+    RTEXT "", 1433, 0, 0, 100, 20
+    LTEXT "", 1434, 0, 0, 100, 20
+    LTEXT "", 1435, 0, 0, 100, 20
+    LTEXT "", 1436, 0, 0, 100, 20
+    RTEXT "", 1437, 0, 0, 100, 20
+    PUSHBUTTON "Direct", 1411, 0, 0, 100, 20
+    PUSHBUTTON "Proxy", 1412, 0, 0, 100, 20
+    PUSHBUTTON "Details", 1409, 0, 0, 100, 20
+    PUSHBUTTON "Copy", 1413, 0, 0, 100, 20
+    DEFPUSHBUTTON "Close", IDCANCEL, 0, 0, 100, 20
+END
