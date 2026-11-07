@@ -7,7 +7,7 @@
 - Rust：`rustc 1.99.0`，目标 `x86_64-pc-windows-gnu`，MinGW-w64。
 - 对整理后的源码执行 `cargo test --locked --offline`：**85 passed，0 failed，16 ignored**。
 - 默认忽略了实网认证、原生界面和计划任务等集成测试，本次未执行这些测试。
-- 对整理后的源码执行锁定依赖的 release 构建，成功生成 x64 EXE；PE 版本资源的 ProductVersion / FileVersion 均为 `0.14.3`，文件大小 2,875,392 字节。
+- 对整理后的源码执行锁定依赖、启用路径重映射的 release 构建，成功生成 x64 EXE；PE 版本资源的 ProductVersion / FileVersion 均为 `0.14.3`。文件大小与摘要以当前 Release 附件为准。
 - 检查导入表，依赖项为 Windows 系统 DLL，未发现额外的 MinGW 运行时 DLL 导入。
 - 生成单文件 EXE 和便携 ZIP，并计算 SHA-256。实际下载文件以 Release 附件校验清单为准。
 
@@ -29,5 +29,5 @@
 
 - 只收入 Windows 托盘版和 Android 版最新源码，未收入早期桌面版。
 - 未收入历史二进制、基准测试快照、门户抓取、本机配置、日志、SDK 路径或签名私钥。
-- 本地 Markdown 链接检查通过；已检查常见私钥、GitHub 令牌和本机用户绝对路径模式，无命中。
+- 本地 Markdown 链接检查通过；检查常见私钥、GitHub 令牌以及本机路径，公开的 Git 提交和标签使用 GitHub 隐私邮箱。
 - 按维护者要求关闭 GitHub Actions 自动构建，停止运行中的任务并移除活动工作流。首轮远端验证曾在工具准备阶段失败；本次发布以本文列出的本机验证结果为准，不宣称远端 CI 已通过。

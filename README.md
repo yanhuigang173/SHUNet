@@ -63,6 +63,8 @@ rustup target add x86_64-pc-windows-gnu
 
 输出到 `dist/windows/`。脚本使用临时英文 target 路径，避免 MinGW 处理中文路径出错。运行软件无需安装 Rust、Python 或 .NET。
 
+发布构建会将本机用户目录、工具链目录和工作区路径重映射为通用路径，避免将本机用户名随 EXE 分发。Git 提交使用 GitHub 隐私邮箱；账号配置与运行日志不会打包到安装包。
+
 Android 使用 JDK 17、Android SDK Platform 36、Build-Tools 35.0.0：
 
 ```powershell
