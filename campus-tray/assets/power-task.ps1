@@ -1,4 +1,4 @@
-﻿# Input is a base64 JSON object supplied by the native application, never executable text.
+# Input is a base64 JSON object supplied by the native application, never executable text.
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [Text.UTF8Encoding]::new($false)
